@@ -49,6 +49,8 @@ const stateCoordinate = {
   west_virginia: { latitude: 38.491226, longitude: -80.954456 },
   wisconsin: { latitude: 44.268543, longitude: -89.616508 },
   wyoming: { latitude: 42.755966, longitude: -107.302490 },
+  puerto_rico: { latitude: 18.220833, longitude: -66.590149 },
+  district_of_columbia: { latitude: 38.89511, longitude: -77.03637 },
 };
 
 export default stateCoordinate;

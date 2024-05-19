@@ -20,9 +20,7 @@ const API =
   
   export default function HomeScreen() {
   const navigation = useNavigation()
-  const [data, setData] = useState(null);
-  // const [slugState, setSlugState] = useState('')
-  const [imgSource, setImgSource] = useState('')
+  const [data, setData] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,22 +35,13 @@ const API =
     fetchData();
   }, []);
 
-  useEffect(() => {
-    if (data) {
-      console.log(data.data[0]);
-      // setSlugState(data.data[0]['Slug State'])
-      setImgSource(`../../../assets/state/${data.data[9]['Slug State']}.png`)
-      console.log(imgSource);
-    }
-  }, [data]);
-
   return (
     <>
-      <StatusBar />
+      {/* <StatusBar />
       <SafeAreaView
         edges={['top']}
         style={{ flex: 0, backgroundColor: '#3C3B6E' }}
-      />
+      /> */}
       <SafeAreaView
         edges={['left', 'right', 'bottom']}
         style={{
@@ -76,7 +65,7 @@ const API =
             islands. Both the states and the United States as a whole are each
             sovereign jurisdictions.
           </MyText>
-          <ScrollView style={{ height: '75%', marginTop: 20, paddingBottom: 100 }}>
+          <ScrollView style={{ height: '73%', marginTop: 20, paddingBottom: 100 }}>
             {data ? null : <Text>Loading...</Text>}
             {data?.data.map((item, i) => (
               <TouchableOpacity
